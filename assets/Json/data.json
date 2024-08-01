@@ -1,0 +1,47 @@
+{
+  "location": {
+    "name": "Surat",
+    "region": "Gujarat",
+    "country": "India",
+    "lat": 20.97,
+    "lon": 72.9,
+    "tz_id": "Asia/Kolkata",
+    "localtime_epoch": 1722452778,
+    "localtime": "2024-08-01 0:36"
+  },
+  "current": {
+    "last_updated_epoch": 1722452400,
+    "last_updated": "2024-08-01 00:30",
+    "temp_c": 26.9,
+    "temp_f": 80.4,
+    "is_day": 0,
+    "condition": {
+      "text": "Patchy light drizzle",
+      "icon": "//cdn.weatherapi.com/weather/64x64/night/263.png",
+      "code": 1150
+    },
+    "wind_mph": 15.2,
+    "wind_kph": 24.5,
+    "wind_degree": 234,
+    "wind_dir": "SW",
+    "pressure_mb": 1003.0,
+    "pressure_in": 29.63,
+    "precip_mm": 0.23,
+    "precip_in": 0.01,
+    "humidity": 90,
+    "cloud": 74,
+    "feelslike_c": 31.4,
+    "feelslike_f": 88.4,
+    "windchill_c": 26.9,
+    "windchill_f": 80.4,
+    "heatindex_c": 31.4,
+    "heatindex_f": 88.4,
+    "dewpoint_c": 25.1,
+    "dewpoint_f": 77.2,
+    "vis_km": 5.0,
+    "vis_miles": 3.0,
+    "uv": 1.0,
+    "gust_mph": 22.7,
+    "gust_kph": 36.6
+  }
+}
