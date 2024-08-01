@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sky_scrapper/provider/weather_provider.dart';
+import 'package:sky_scrapper/view/fav_screen.dart';
 import 'package:sky_scrapper/view/weather_screen.dart';
 
 
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routes: {
           '/' : (context) => const WeatherScreen(),
+          '/fav' : (context) => const FavScreen(),
         },
       ),
     );
