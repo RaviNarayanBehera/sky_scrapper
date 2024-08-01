@@ -21,5 +21,9 @@ class WeatherProvider extends ChangeNotifier
     return weatherModal;
   }
 
+  WeatherProvider(){
+    fromMap(search);
+  }
+
 
 }

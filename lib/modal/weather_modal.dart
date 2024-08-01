@@ -1,8 +1,3 @@
-
-
-
-
-
 class WeatherModal {
   late LocationModal locationModal;
   late CurrentModal currentModal;
