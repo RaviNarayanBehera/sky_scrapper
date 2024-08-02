@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sky_scrapper/provider/weather_provider.dart';
 import 'package:sky_scrapper/view/fav_screen.dart';
+import 'package:sky_scrapper/view/splash_screen.dart';
 import 'package:sky_scrapper/view/weather_screen.dart';
 
 
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         // darkTheme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
         routes: {
-          '/' : (context) => const WeatherScreen(),
+          '/' : (context) => const SplashScreen(),
+          '/weather' : (context) => const WeatherScreen(),
           '/fav' : (context) => const FavScreen(),
         },
       ),
