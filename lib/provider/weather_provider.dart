@@ -23,7 +23,7 @@ class WeatherProvider extends ChangeNotifier
     return weatherModal;
   }
 
-  Future<void> addFav(String name, String status, String temp,)
+  Future<void> addFav(String name, String status, String temp)
   async {
     String like = "$name-$status-$temp";
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();

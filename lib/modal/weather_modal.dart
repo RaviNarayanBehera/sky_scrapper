@@ -16,11 +16,11 @@ class WeatherModal {
 class LocationModal {
   late String name, region, country, localtime;
 
-  LocationModal(this.name, this.region, this.country, this.localtime);
+  LocationModal(this.name, this.region, this.country, this.localtime,);
 
   factory LocationModal.fromJson(Map m1) {
     return LocationModal(
-        m1['name'], m1['region'], m1['country'], m1['localtime']);
+        m1['name'], m1['region'], m1['country'], m1['localtime'],);
   }
 }
 
