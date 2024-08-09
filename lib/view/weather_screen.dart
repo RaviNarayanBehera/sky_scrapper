@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:sky_scrapper/provider/weather_provider.dart';
+import '../provider/weather_provider.dart';
 
 TextEditingController txtSearchCity = TextEditingController();
 
@@ -16,10 +16,10 @@ class WeatherScreen extends StatelessWidget {
       builder: (context, snapshot) {
         if (snapshot.hasData) {
           return Scaffold(
-            backgroundColor: (homeProviderTrue.weatherModal!.currentModal
-                .is_day == 1)
-                ? Colors.orange.shade200
-                : Colors.deepPurpleAccent.shade100,
+            backgroundColor:
+                (homeProviderTrue.weatherModal!.currentModal.is_day == 1)
+                    ? Colors.orange.shade200
+                    : Colors.deepPurpleAccent.shade100,
             body: SingleChildScrollView(
               child: Column(
                 children: [
@@ -37,11 +37,11 @@ class WeatherScreen extends StatelessWidget {
                             decoration: BoxDecoration(
                               border: Border.all(color: Colors.black),
                               color: (homeProviderTrue
-                                  .weatherModal!.currentModal.is_day ==
-                                  1)
+                                          .weatherModal!.currentModal.is_day ==
+                                      1)
                                   ? Colors.orange.shade100
                                   : Colors.deepPurpleAccent
-                                  .shade100, // Background color
+                                      .shade100, // Background color
                               // Circular shape
                             ),
                             child: Center(
@@ -52,13 +52,13 @@ class WeatherScreen extends StatelessWidget {
                                 },
                                 style: TextStyle(
                                     color: (homeProviderTrue.weatherModal!
-                                        .currentModal.is_day ==
-                                        1)
+                                                .currentModal.is_day ==
+                                            1)
                                         ? Colors.black
                                         : Colors.white),
                                 cursorColor: (homeProviderTrue.weatherModal!
-                                    .currentModal.is_day ==
-                                    1)
+                                            .currentModal.is_day ==
+                                        1)
                                     ? Colors.black
                                     : Colors.white,
                                 decoration: InputDecoration(
@@ -68,8 +68,8 @@ class WeatherScreen extends StatelessWidget {
                                   hintText: 'Enter City/State/Country',
                                   hintStyle: TextStyle(
                                     color: (homeProviderTrue.weatherModal!
-                                        .currentModal.is_day ==
-                                        1)
+                                                .currentModal.is_day ==
+                                            1)
                                         ? Colors.black
                                         : Colors.white,
                                   ),
@@ -89,8 +89,8 @@ class WeatherScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                           image: DecorationImage(
                               image: AssetImage((homeProviderTrue
-                                  .weatherModal!.currentModal.is_day ==
-                                  1)
+                                          .weatherModal!.currentModal.is_day ==
+                                      1)
                                   ? day
                                   : night),
                               fit: BoxFit.fill),
@@ -99,33 +99,43 @@ class WeatherScreen extends StatelessWidget {
                           children: [
                             Row(
                               children: [
-                                IconButton(onPressed: () {
-                                  Navigator.of(context).pushNamed('/fav');
-                                }, icon: Icon(Icons.menu_rounded,color: (homeProviderTrue.weatherModal!
-                                    .currentModal.is_day ==
-                                    1)
-                                    ? Colors.black
-                                    : Colors.white,)),
-                                Spacer(),
+                                IconButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pushNamed('/fav');
+                                    },
+                                    icon: Icon(
+                                      Icons.menu_rounded,
+                                      color: (homeProviderTrue.weatherModal!
+                                                  .currentModal.is_day ==
+                                              1)
+                                          ? Colors.black
+                                          : Colors.white,
+                                    )),
+                                const Spacer(),
                                 Align(
                                   alignment: Alignment.topRight,
                                   child: IconButton(
                                       onPressed: () {
                                         homeProvider.addFav(
-                                            homeProviderTrue
-                                                .weatherModal!.locationModal.name,
-                                            homeProviderTrue.weatherModal!
-                                                .currentModal.condition.text,
-                                            homeProviderTrue
-                                                .weatherModal!.currentModal.temp_c
-                                                .toString()
-                                                );
+                                          homeProviderTrue
+                                              .weatherModal!.locationModal.name,
+                                          homeProviderTrue.weatherModal!
+                                              .currentModal.condition.text,
+                                          homeProviderTrue
+                                              .weatherModal!.currentModal.temp_c
+                                              .toString(),
+                                          homeProviderTrue.weatherModal!
+                                              .currentModal.condition.icon,
+                                        );
                                       },
-                                      icon: Icon(Icons.favorite_border,color: (homeProviderTrue.weatherModal!
-                                          .currentModal.is_day ==
-                                          1)
-                                          ? Colors.black
-                                          : Colors.white,)),
+                                      icon: Icon(
+                                        Icons.favorite_border,
+                                        color: (homeProviderTrue.weatherModal!
+                                                    .currentModal.is_day ==
+                                                1)
+                                            ? Colors.black
+                                            : Colors.white,
+                                      )),
                                 ),
                               ],
                             ),
@@ -136,8 +146,8 @@ class WeatherScreen extends StatelessWidget {
                               homeProviderTrue.weatherModal!.locationModal.name,
                               style: TextStyle(
                                   color: (homeProviderTrue.weatherModal!
-                                      .currentModal.is_day ==
-                                      1)
+                                              .currentModal.is_day ==
+                                          1)
                                       ? Colors.black
                                       : Colors.white,
                                   fontSize: 40,
@@ -151,12 +161,11 @@ class WeatherScreen extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    " ${homeProviderTrue.weatherModal!
-                                        .currentModal.temp_c}",
+                                    " ${homeProviderTrue.weatherModal!.currentModal.temp_c}",
                                     style: TextStyle(
                                         color: (homeProviderTrue.weatherModal!
-                                            .currentModal.is_day ==
-                                            1)
+                                                    .currentModal.is_day ==
+                                                1)
                                             ? Colors.black
                                             : Colors.white,
                                         fontSize: 100,
@@ -170,8 +179,8 @@ class WeatherScreen extends StatelessWidget {
                                         '°C',
                                         style: TextStyle(
                                           color: (homeProviderTrue.weatherModal!
-                                              .currentModal.is_day ==
-                                              1)
+                                                      .currentModal.is_day ==
+                                                  1)
                                               ? Colors.black
                                               : Colors.white,
                                           fontSize: 55,
@@ -189,8 +198,8 @@ class WeatherScreen extends StatelessWidget {
                                   .weatherModal!.currentModal.condition.text,
                               style: TextStyle(
                                 color: (homeProviderTrue.weatherModal!
-                                    .currentModal.is_day ==
-                                    1)
+                                            .currentModal.is_day ==
+                                        1)
                                     ? Colors.black
                                     : Colors.white,
                                 fontSize: 20,
@@ -207,8 +216,8 @@ class WeatherScreen extends StatelessWidget {
                                 width: double.infinity,
                                 decoration: BoxDecoration(
                                     color: (homeProviderTrue.weatherModal!
-                                        .currentModal.is_day ==
-                                        1)
+                                                .currentModal.is_day ==
+                                            1)
                                         ? Colors.orange.shade100
                                         : Colors.deepPurple.shade300,
                                     borderRadius: BorderRadius.circular(20)),
@@ -251,31 +260,33 @@ class WeatherScreen extends StatelessWidget {
                                                 width: 80,
                                                 child: Column(
                                                   mainAxisAlignment:
-                                                  MainAxisAlignment.start,
+                                                      MainAxisAlignment.start,
                                                   children: [
                                                     Text(
                                                       hour.time
                                                           .split(" ")
                                                           .sublist(1, 2)
                                                           .join(" "),
-                                                      style:  TextStyle(
-                                                          color: (homeProviderTrue.weatherModal!
-                                                              .currentModal.is_day ==
-                                                              1)
+                                                      style: TextStyle(
+                                                          color: (homeProviderTrue
+                                                                      .weatherModal!
+                                                                      .currentModal
+                                                                      .is_day ==
+                                                                  1)
                                                               ? Colors.black
                                                               : Colors.white,
                                                           fontSize: 18),
                                                     ),
                                                     Image.network(
-                                                        'https:${hour
-                                                            .hourConditionModal
-                                                            .icon}'),
+                                                        'https:${hour.hourConditionModal.icon}'),
                                                     Text(
                                                       '${hour.temp_c}',
                                                       style: TextStyle(
-                                                          color: (homeProviderTrue.weatherModal!
-                                                              .currentModal.is_day ==
-                                                              1)
+                                                          color: (homeProviderTrue
+                                                                      .weatherModal!
+                                                                      .currentModal
+                                                                      .is_day ==
+                                                                  1)
                                                               ? Colors.black
                                                               : Colors.white,
                                                           fontSize: 18),
@@ -309,7 +320,7 @@ class WeatherScreen extends StatelessWidget {
                               children: [
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Container(
                                       height: 120,
@@ -317,8 +328,8 @@ class WeatherScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: (homeProviderTrue.weatherModal!
-                                            .currentModal.is_day ==
-                                            1)
+                                                    .currentModal.is_day ==
+                                                1)
                                             ? Colors.orange.shade100
                                             : Colors.deepPurple.shade300,
                                       ),
@@ -330,10 +341,10 @@ class WeatherScreen extends StatelessWidget {
                                               'W wind',
                                               style: TextStyle(
                                                   color: (homeProviderTrue
-                                                      .weatherModal!
-                                                      .currentModal
-                                                      .is_day ==
-                                                      1)
+                                                              .weatherModal!
+                                                              .currentModal
+                                                              .is_day ==
+                                                          1)
                                                       ? Colors.black
                                                       : Colors.black,
                                                   fontSize: 20,
@@ -341,14 +352,13 @@ class WeatherScreen extends StatelessWidget {
                                             ),
                                             const SizedBox(height: 10),
                                             Text(
-                                              '${homeProviderTrue.weatherModal!
-                                                  .currentModal.wind_kph} km/h',
+                                              '${homeProviderTrue.weatherModal!.currentModal.wind_kph} km/h',
                                               style: TextStyle(
                                                 color: (homeProviderTrue
-                                                    .weatherModal!
-                                                    .currentModal
-                                                    .is_day ==
-                                                    1)
+                                                            .weatherModal!
+                                                            .currentModal
+                                                            .is_day ==
+                                                        1)
                                                     ? Colors.black
                                                     : Colors.white,
                                                 fontSize: 30,
@@ -365,8 +375,8 @@ class WeatherScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: (homeProviderTrue.weatherModal!
-                                            .currentModal.is_day ==
-                                            1)
+                                                    .currentModal.is_day ==
+                                                1)
                                             ? Colors.orange.shade100
                                             : Colors.deepPurple.shade300,
                                       ),
@@ -378,30 +388,28 @@ class WeatherScreen extends StatelessWidget {
                                               'Humidity',
                                               style: TextStyle(
                                                   color: (homeProviderTrue
-                                                      .weatherModal!
-                                                      .currentModal
-                                                      .is_day ==
-                                                      1)
+                                                              .weatherModal!
+                                                              .currentModal
+                                                              .is_day ==
+                                                          1)
                                                       ? Colors.black
                                                       : Colors.black,
                                                   fontWeight: FontWeight.w500),
                                             ),
                                             const SizedBox(height: 10),
                                             Text(
-                                                '${homeProviderTrue
-                                                    .weatherModal!.currentModal
-                                                    .humidity} %',
+                                                '${homeProviderTrue.weatherModal!.currentModal.humidity} %',
                                                 style: TextStyle(
                                                     color: (homeProviderTrue
-                                                        .weatherModal!
-                                                        .currentModal
-                                                        .is_day ==
-                                                        1)
+                                                                .weatherModal!
+                                                                .currentModal
+                                                                .is_day ==
+                                                            1)
                                                         ? Colors.black
                                                         : Colors.white,
                                                     fontSize: 30,
                                                     fontWeight:
-                                                    FontWeight.w500)),
+                                                        FontWeight.w500)),
                                           ],
                                         ),
                                       ),
@@ -413,7 +421,7 @@ class WeatherScreen extends StatelessWidget {
                                 ),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Container(
                                       height: 120,
@@ -421,8 +429,8 @@ class WeatherScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: (homeProviderTrue.weatherModal!
-                                            .currentModal.is_day ==
-                                            1)
+                                                    .currentModal.is_day ==
+                                                1)
                                             ? Colors.orange.shade100
                                             : Colors.deepPurple.shade300,
                                       ),
@@ -434,10 +442,10 @@ class WeatherScreen extends StatelessWidget {
                                               'Pressure ',
                                               style: TextStyle(
                                                   color: (homeProviderTrue
-                                                      .weatherModal!
-                                                      .currentModal
-                                                      .is_day ==
-                                                      1)
+                                                              .weatherModal!
+                                                              .currentModal
+                                                              .is_day ==
+                                                          1)
                                                       ? Colors.black
                                                       : Colors.black,
                                                   fontSize: 20,
@@ -445,20 +453,18 @@ class WeatherScreen extends StatelessWidget {
                                             ),
                                             const SizedBox(height: 10),
                                             Text(
-                                                '${homeProviderTrue
-                                                    .weatherModal!.currentModal
-                                                    .pressure_mb} mb',
+                                                '${homeProviderTrue.weatherModal!.currentModal.pressure_mb} mb',
                                                 style: TextStyle(
                                                     color: (homeProviderTrue
-                                                        .weatherModal!
-                                                        .currentModal
-                                                        .is_day ==
-                                                        1)
+                                                                .weatherModal!
+                                                                .currentModal
+                                                                .is_day ==
+                                                            1)
                                                         ? Colors.black
                                                         : Colors.white,
                                                     fontSize: 30,
                                                     fontWeight:
-                                                    FontWeight.w500)),
+                                                        FontWeight.w500)),
                                           ],
                                         ),
                                       ),
@@ -469,8 +475,8 @@ class WeatherScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: (homeProviderTrue.weatherModal!
-                                            .currentModal.is_day ==
-                                            1)
+                                                    .currentModal.is_day ==
+                                                1)
                                             ? Colors.orange.shade100
                                             : Colors.deepPurple.shade300,
                                       ),
@@ -482,10 +488,10 @@ class WeatherScreen extends StatelessWidget {
                                               'Visibility',
                                               style: TextStyle(
                                                   color: (homeProviderTrue
-                                                      .weatherModal!
-                                                      .currentModal
-                                                      .is_day ==
-                                                      1)
+                                                              .weatherModal!
+                                                              .currentModal
+                                                              .is_day ==
+                                                          1)
                                                       ? Colors.black
                                                       : Colors.black,
                                                   fontSize: 20,
@@ -493,20 +499,18 @@ class WeatherScreen extends StatelessWidget {
                                             ),
                                             const SizedBox(height: 10),
                                             Text(
-                                                '${homeProviderTrue
-                                                    .weatherModal!.currentModal
-                                                    .vis_km} km',
+                                                '${homeProviderTrue.weatherModal!.currentModal.vis_km} km',
                                                 style: TextStyle(
                                                     color: (homeProviderTrue
-                                                        .weatherModal!
-                                                        .currentModal
-                                                        .is_day ==
-                                                        1)
+                                                                .weatherModal!
+                                                                .currentModal
+                                                                .is_day ==
+                                                            1)
                                                         ? Colors.black
                                                         : Colors.white,
                                                     fontSize: 30,
                                                     fontWeight:
-                                                    FontWeight.w500)),
+                                                        FontWeight.w500)),
                                           ],
                                         ),
                                       ),
@@ -518,7 +522,7 @@ class WeatherScreen extends StatelessWidget {
                                 ),
                                 Row(
                                   mainAxisAlignment:
-                                  MainAxisAlignment.spaceEvenly,
+                                      MainAxisAlignment.spaceEvenly,
                                   children: [
                                     Container(
                                       height: 120,
@@ -526,8 +530,8 @@ class WeatherScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: (homeProviderTrue.weatherModal!
-                                            .currentModal.is_day ==
-                                            1)
+                                                    .currentModal.is_day ==
+                                                1)
                                             ? Colors.orange.shade100
                                             : Colors.deepPurple.shade300,
                                       ),
@@ -539,10 +543,10 @@ class WeatherScreen extends StatelessWidget {
                                               'Feels Like ',
                                               style: TextStyle(
                                                   color: (homeProviderTrue
-                                                      .weatherModal!
-                                                      .currentModal
-                                                      .is_day ==
-                                                      1)
+                                                              .weatherModal!
+                                                              .currentModal
+                                                              .is_day ==
+                                                          1)
                                                       ? Colors.black
                                                       : Colors.black,
                                                   fontSize: 20,
@@ -550,20 +554,18 @@ class WeatherScreen extends StatelessWidget {
                                             ),
                                             const SizedBox(height: 10),
                                             Text(
-                                                '${homeProviderTrue
-                                                    .weatherModal!.currentModal
-                                                    .feelslike_c}°',
+                                                '${homeProviderTrue.weatherModal!.currentModal.feelslike_c}°',
                                                 style: TextStyle(
                                                     color: (homeProviderTrue
-                                                        .weatherModal!
-                                                        .currentModal
-                                                        .is_day ==
-                                                        1)
+                                                                .weatherModal!
+                                                                .currentModal
+                                                                .is_day ==
+                                                            1)
                                                         ? Colors.black
                                                         : Colors.white,
                                                     fontSize: 30,
                                                     fontWeight:
-                                                    FontWeight.w500)),
+                                                        FontWeight.w500)),
                                           ],
                                         ),
                                       ),
@@ -574,8 +576,8 @@ class WeatherScreen extends StatelessWidget {
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(20),
                                         color: (homeProviderTrue.weatherModal!
-                                            .currentModal.is_day ==
-                                            1)
+                                                    .currentModal.is_day ==
+                                                1)
                                             ? Colors.orange.shade100
                                             : Colors.deepPurple.shade300,
                                       ),
@@ -587,10 +589,10 @@ class WeatherScreen extends StatelessWidget {
                                               'Clouds  ',
                                               style: TextStyle(
                                                   color: (homeProviderTrue
-                                                      .weatherModal!
-                                                      .currentModal
-                                                      .is_day ==
-                                                      1)
+                                                              .weatherModal!
+                                                              .currentModal
+                                                              .is_day ==
+                                                          1)
                                                       ? Colors.black
                                                       : Colors.black,
                                                   fontSize: 20,
@@ -598,20 +600,18 @@ class WeatherScreen extends StatelessWidget {
                                             ),
                                             const SizedBox(height: 10),
                                             Text(
-                                                '${homeProviderTrue
-                                                    .weatherModal!.currentModal
-                                                    .cloud}%',
+                                                '${homeProviderTrue.weatherModal!.currentModal.cloud}%',
                                                 style: TextStyle(
                                                     color: (homeProviderTrue
-                                                        .weatherModal!
-                                                        .currentModal
-                                                        .is_day ==
-                                                        1)
+                                                                .weatherModal!
+                                                                .currentModal
+                                                                .is_day ==
+                                                            1)
                                                         ? Colors.black
                                                         : Colors.white,
                                                     fontSize: 30,
                                                     fontWeight:
-                                                    FontWeight.w500)),
+                                                        FontWeight.w500)),
                                           ],
                                         ),
                                       ),

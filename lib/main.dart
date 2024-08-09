@@ -5,7 +5,6 @@ import 'package:sky_scrapper/view/fav_screen.dart';
 import 'package:sky_scrapper/view/splash_screen.dart';
 import 'package:sky_scrapper/view/weather_screen.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -18,12 +17,11 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => WeatherProvider(),
       builder: (context, child) => MaterialApp(
-        // darkTheme: ThemeData.dark(),
         debugShowCheckedModeBanner: false,
         routes: {
-          '/' : (context) => const SplashScreen(),
-          '/weather' : (context) => const WeatherScreen(),
-          '/fav' : (context) => const FavScreen(),
+          '/': (context) => const SplashScreen(),
+          '/weather': (context) => const WeatherScreen(),
+          '/fav': (context) => const FavScreen(),
         },
       ),
     );

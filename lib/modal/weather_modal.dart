@@ -16,16 +16,33 @@ class WeatherModal {
 class LocationModal {
   late String name, region, country, localtime;
 
-  LocationModal(this.name, this.region, this.country, this.localtime,);
+  LocationModal(
+    this.name,
+    this.region,
+    this.country,
+    this.localtime,
+  );
 
   factory LocationModal.fromJson(Map m1) {
     return LocationModal(
-        m1['name'], m1['region'], m1['country'], m1['localtime'],);
+      m1['name'],
+      m1['region'],
+      m1['country'],
+      m1['localtime'],
+    );
   }
 }
 
 class CurrentModal {
-  late double temp_c, temp_f, wind_mph, wind_kph, pressure_in, pressure_mb, uv,vis_km,feelslike_c;
+  late double temp_c,
+      temp_f,
+      wind_mph,
+      wind_kph,
+      pressure_in,
+      pressure_mb,
+      uv,
+      vis_km,
+      feelslike_c;
   late int is_day, humidity, cloud;
   late Condition condition;
 
@@ -81,7 +98,7 @@ class ForecastModal {
     return ForecastModal((m1['forecastday'] as List)
         .map(
           (e) => ForecastDay.fromJson(e),
-    )
+        )
         .toList());
   }
 }
@@ -100,7 +117,7 @@ class ForecastDay {
         (m1['hour'] as List)
             .map(
               (e) => HourModal.fromJson(e),
-        )
+            )
             .toList());
   }
 }
