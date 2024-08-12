@@ -5,7 +5,7 @@ WeatherApp
 </h1>
 
 <h1 align = "center">
-<img src="https://github.com/user-attachments/assets/a19436d1-b75d-4338-8889-89981acc8e31" height=65%  width=22%>
+<img src="https://github.com/user-attachments/assets/43fe3e0b-a71c-4afa-afac-7ac543aa62ae" height=65%  width=22%>
 </h1>
 <h1 align = "center">
   <img src="https://github.com/user-attachments/assets/865a0787-3102-4b56-9b61-d9d6cfb8b32d" height=65%  width=22%>
@@ -28,4 +28,4 @@ WeatherApp
 WeatherApp Video
 </h1>
 <div align="center">
-<video src = "https://github.com/user-attachments/assets/9b0e4f38-1a36-4783-890d-72f8f1a73e0c">
+<video src = "https://github.com/user-attachments/assets/1c3fc1bf-a4bb-4254-b223-b456385c780c">
